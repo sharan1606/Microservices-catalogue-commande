@@ -14,14 +14,17 @@ C'est un mini projet donc il n'y a pas de base de donnée tout est stocké en lo
 microservices-catalogue-commande/
 │
 ├── catalogue/
-│   ├── index.js
+│   ├── app.js
+│   ├── app.test.js
 │   ├── catalogue.js
 │   ├── dockerfile
+│   ├── server.js
 │   └── package.json
 │
 ├── orders/
-│   ├── index.js
+│   ├── app.js
 │   ├── orders.js
+│   ├── server.js
 │   ├── dockefile
 │   └── package.json
 │
@@ -30,8 +33,11 @@ microservices-catalogue-commande/
 └── README.md
 
 
-# Pour le lancer vous devez cloner le projet, ouvrir visual studio et ouvrir un nouveau terminal, une fois sur le terminal il faudra entrer cette commande:
-docker compose up --build
+# Pour le lancer vous devez cloner le projet, ouvrir visual studio et ouvrir un nouveau terminal, une fois sur le terminal il faudra entrer des commande:
+
+- npm install express body-parser cors axios (pour installer express ,body-parser,cors et axios)
+- npm init -y (pour créer le fichier package.json)
+- docker compose up --build (pour construire et lancer le projet)
 
 Une fois construit, vos deux services seront lancé sur deux ports :
 Catalogue -> 8081
