@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const productsService = require('.');
+const productsService = require('./catalogue');
 
 const app = express();
 app.use(cors());
@@ -22,4 +22,4 @@ app.post('/products', (req, res) => {
     res.status(201).json(product);
 });
 
-app.listen(8081, () => console.log('Catalogue service running on port 8081'));
+module.exports = app;

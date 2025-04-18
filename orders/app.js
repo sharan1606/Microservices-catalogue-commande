@@ -29,4 +29,4 @@ app.get('/orders/:id', (req, res) => {
     else res.status(404).send('Commande non trouvée');
 });
 
-app.listen(8082, () => console.log('Commande service running on port 8082'));
+module.exports = app;
