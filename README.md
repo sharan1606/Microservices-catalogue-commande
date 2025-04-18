@@ -77,6 +77,26 @@ body-> raw: {
 }
 Résultat : Error 500
 
+# Pour les tests unitaires: 
+1/Ouvrir le shell interactif de docker avec la commande: 
+- Pour le service commande:
+    Docker compose exec commande bash
+
+- Pour le service catalogue:
+    Docker compose exec catalogue bash
+
+- Ensuite, installer jest supertest dans le shell docker avec la commande: 
+    npm install --save-dev jest supertest
+
+- Enfin, lancer: 
+    npm test
+
+--> Vérifier que le package.json de chaque service contient bien:
+ "scripts": {
+    "test": "jest"
+  },
+
+
 # Pour arrêter le projet : 
 docker compose down
 
