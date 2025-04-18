@@ -8,8 +8,9 @@ COPY package*.json ./
 # Installer les dépendances
 RUN npm install
 
+
 # Copier le reste des fichiers de ton projet dans le container
 COPY . .
 
 # Exécuter le serveur
-CMD ["node", "index.js"]
+CMD ["node", "server.js"]
