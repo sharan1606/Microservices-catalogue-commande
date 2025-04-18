@@ -78,24 +78,20 @@ body-> raw: {
 Résultat : Error 500
 
 # Pour les tests unitaires: 
-1/Ouvrir le shell interactif de docker avec la commande: 
-- Pour le service commande:
-    Docker compose exec commande bash
+1/ Ouvrir le terminal à la racine pour installer Jest et supertest :
+npm install --save-dev jest supertest
 
-- Pour le service catalogue:
-    Docker compose exec catalogue bash
-
-- Ensuite, installer jest supertest dans le shell docker avec la commande: 
-    npm install --save-dev jest supertest
-
-- Enfin, lancer: 
-    npm test
-
---> Vérifier que le package.json de chaque service contient bien:
- "scripts": {
+2/ Vérifier que sur catalogue/package.json & orders/package.json vous avez cette ligne:
+"scripts": {
     "test": "jest"
   },
 
+3/ Dans le terminal mettez vous dans le dossier catalogue ou orders et entrez cette commande :
+"npm test" ou "npm run test" en fonction de votre systeme.
+
+4/ Vous devriez voir :
+Test Suites: 1 passed, 1 total
+Tests:       4 passed, 4 total
 
 # Pour arrêter le projet : 
 docker compose down
