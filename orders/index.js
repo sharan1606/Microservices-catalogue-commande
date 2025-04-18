@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const CATALOGUE_URL = 'http://localhost:8081/products';
+const CATALOGUE_URL = 'http://catalogue:8081/products';
 
 app.post('/orders', async (req, res) => {
     try {
@@ -18,6 +18,7 @@ app.post('/orders', async (req, res) => {
         const order = ordersService.create(products);
         res.status(201).json(order);
     } catch (error) {
+        console.error('Erreur axios :', error.message);
         res.status(500).send('Erreur lors de la création de commande');
     }
 });
